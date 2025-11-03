@@ -1,0 +1,13 @@
+# vsim -debugDB -l run_intr_rx_levels.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
+# Start time: 03:55:25 on Nov 04,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# ** Error (suppressible): run_test.v(29): (vopt-7041) String assignment:  Arg. 'tag' of 'CHECK_EQ':  Assigning a string to a packed type requires a cast.
+# ** Error (suppressible): run_test.v(34): (vopt-7041) String assignment:  Arg. 'tag' of 'CHECK_EQ':  Assigning a string to a packed type requires a cast.
+# ** Error (suppressible): run_test.v(35): (vopt-7041) String assignment:  Arg. 'tag' of 'CHECK_EQ':  Assigning a string to a packed type requires a cast.
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=3, Warnings=1.
+# Error loading design
+# End time: 03:55:25 on Nov 04,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 1

@@ -1,0 +1,12 @@
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+Start time: 04:08:40 on Nov 04,2025
+vlog -sv -f compile.f 
+-- Compiling module Uart
+-- Compiling module test_bench
+** Error: run_test.v(18): (vlog-2730) Undefined variable: 'PCLK'.
+** Error: run_test.v(18): (vlog-2730) Undefined variable: 'PRESETn'.
+** Error: run_test.v(19): (vlog-2730) Undefined variable: 'UARTCLK'.
+** Error: run_test.v(19): (vlog-2730) Undefined variable: 'nUARTRST'.
+** Error: run_test.v(30): (vlog-2730) Undefined variable: 'pass_cnt'.
+End time: 04:08:41 on Nov 04,2025, Elapsed time: 0:00:01
+Errors: 5, Warnings: 0

@@ -1,0 +1,47 @@
+# vsim -debugDB -l run_intr_rx_mask_unmask.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
+# Start time: 02:22:23 on Nov 04,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2024.3 linux_x86_64 Sep 10 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.test_bench(fast)
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# log -r /*
+# run -all
+# 
+# [TC] RX interrupt — Mask/Unmask
+# [115000] [PASS] RIS=1 = 0x0010
+# [115000] [PASS] MIS=0 when masked = 0x0000
+# [175000] [PASS] MIS reflects RIS when unmasked = 0x0010
+# 
+# =================================================
+# 
+# ==================== SUMMARY ====================
+# 
+# =================================================
+# 
+#                                                  
+# 
+# =================================================
+# PASS = 3, FAIL = 0
+# =================================================
+# 
+# ** Note: $finish    : ../tb/test_bench.v(380)
+#    Time: 205 ns  Iteration: 1  Instance: /test_bench
+# End time: 02:22:23 on Nov 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1

@@ -1,0 +1,53 @@
+# vsim -debugDB -l run_bus_decode_map.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
+# Start time: 04:08:33 on Nov 04,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2024.3 linux_x86_64 Sep 10 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.test_bench(fast)
+# Loading work.Uart(fast)
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# log -r /*
+# run -all
+# 
+# ================ [TC] BUS.DecodeMap ===================
+# [55000] [FAIL] CR RW exp=0x0005 act=0x0300
+# [115000] [FAIL] IBRD RW exp=0x0010 act=0x0000
+# [175000] [PASS] FBRD RW = 0x0002
+# [235000] [PASS] LCR_H RW = 0x0070
+# [295000] [PASS] IFLS RW = 0x0012
+# [355000] [FAIL] IMSC RW exp=0x02f0 act=0x0000
+# [415000] [PASS] FR RO write ignored
+# [475000] [PASS] RIS RO write ignored
+# [535000] [PASS] MIS RO write ignored
+# [595000] [PASS] RIS after ICR no-pending = 0x0000
+# [655000] [PASS] RSVD1 read 0 = 0x0000
+# [715000] [PASS] RSVD2 read 0 = 0x0000
+# ================ DONE BUS.DecodeMap ==================
+# 
+# 
+# ==================== SUMMARY ====================
+# PASS = 9, FAIL = 3
+# =================================================
+# 
+# ** Fatal: Some tests FAILED
+#    Time: 715 ns  Scope: test_bench File: ../tb/test_bench.v Line: 171
+# ** Note: $finish    : ../tb/test_bench.v(171)
+#    Time: 715 ns  Iteration: 1  Instance: /test_bench
+# End time: 04:08:33 on Nov 04,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
