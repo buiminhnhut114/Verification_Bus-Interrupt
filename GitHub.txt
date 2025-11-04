@@ -1,0 +1,103 @@
+Thought for 9sChuẩn rồi, lỗi này là do GitHub không cho dùng password nữa, mà phải dùng Personal Access Token (PAT) hoặc SSH. Mình chỉ bạn cách dễ nhất: dùng token, vẫn với HTTPS như hiện tại 👍
+Ngoài ra, khi Git hỏi:
+Username for 'https://github.com':
+
+thì bạn phải nhập:
+👉 buiminhnhut114 (username GitHub)
+không phải email buiminhnhut114@gmail.com.
+Giờ làm lần lượt nhé.
+
+Bước 1: Tạo Personal Access Token trên GitHub
+
+
+Vào GitHub và đăng nhập: github.com
+
+
+Góc trên bên phải → bấm avatar → Settings
+
+
+Kéo xuống bên trái → Developer settings
+
+
+Chọn Personal access tokens
+
+
+Có thể là "Tokens (classic)" hoặc "Fine-grained tokens", cái nào cũng được, mình hướng dẫn bản classic cho dễ.
+
+
+
+
+Chọn Generate new token (classic)
+
+
+Đặt tên token, ví dụ: ubuntu-laptop
+
+
+Chọn thời hạn (Expiration): 30 days / 90 days / No expiration tùy bạn
+
+
+Ở phần Scopes, tick vào:
+
+
+repo (cho phép push/pull repo)
+
+
+
+
+Kéo xuống dưới cùng → bấm Generate token
+
+
+Rất quan trọng: Copy ngay cái token đó (chuỗi dài kiểu ghp_ABC123...), vì sau này sẽ không xem lại được.
+
+
+Gọi nó là: YOUR_TOKEN cho dễ.
+
+Bước 2: Dùng token để git push
+Quay lại terminal trong thư mục ~/TASK1:
+cd ~/TASK1
+git push -u origin main
+
+Nó sẽ hỏi:
+Username for 'https://github.com':
+
+👉 nhập:
+buiminhnhut114
+
+Rồi nó hỏi:
+Password for 'https://buiminhnhut114@github.com':
+
+👉 dán cái token vừa tạo (CTRL+SHIFT+V trong terminal)
+Lưu ý: khi dán token, terminal sẽ không hiện ký tự, cứ Enter là được.
+Nếu bạn muốn lần sau khỏi phải nhập lại, có thể để Git nhớ token:
+git config --global credential.helper store
+
+Sau đó git push lại lần đầu, nhập username + token, Git sẽ lưu và sau này tự dùng.
+
+Bước 3: (không bắt buộc) sửa lại email Git cho đẹp
+Lúc nãy bạn set:
+git config --global user.email "buiminhnhut114@"
+
+Cho nó chuẩn hơn (không ảnh hưởng đăng nhập, chỉ là thông tin hiển thị trên commit):
+git config --global user.email "buiminhnhut114@gmail.com"
+
+
+Tóm tắt lại cho bạn dễ nhìn
+Trong repo TASK1, quy trình chuẩn mỗi lần làm việc là:
+cd ~/TASK1
+
+# Sau khi đã cấu hình xong hết rồi (user.name, user.email, remote, token)
+git add .
+git commit -m "mo ta thay doi"
+git push
+
+Lần đầu git push cần nhập:
+
+
+Username: buiminhnhut114
+
+
+Password: dán Personal Access Token
+
+
+Nếu sau khi làm như trên mà vẫn lỗi, bạn copy nguyên phần lỗi mới nhất gửi mình, mình đọc và chỉnh tiếp cho chuẩn luôn 😄
+

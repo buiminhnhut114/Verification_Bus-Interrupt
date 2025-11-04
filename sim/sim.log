@@ -1,5 +1,5 @@
-# vsim -debugDB -l run_bus_reset.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
-# Start time: 04:08:41 on Nov 04,2025
+# vsim -debugDB -l run_bus_access_read.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
+# Start time: 08:49:43 on Nov 04,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
@@ -25,19 +25,17 @@
 # log -r /*
 # run -all
 # 
-# ================ [TC] BUS.Reset =======================
-# [275000] [PASS] CR after reset exp=0300 = 0x0300
-# [305000] [PASS] IFLS after reset exp=0012 = 0x0012
-# [335000] [INFO] FR after reset = 0x0090 (log only)
-# [395000] [PASS] CR write after reset = 0x0001
-# ================ DONE BUS.Reset ======================
+# ================ [TC] BUS.AccessRead ==================
+# [55000] [PASS] FR stable r1==r2 = 0x0090
+# [115000] [INFO] FR after CR write = 0x0090
+# ================ DONE BUS.AccessRead ==================
 # 
 # 
 # ==================== SUMMARY ====================
-# PASS = 4, FAIL = 0
+# PASS = 2, FAIL = 0
 # =================================================
 # 
 # ** Note: $finish    : ../tb/test_bench.v(172)
-#    Time: 395 ns  Iteration: 1  Instance: /test_bench
-# End time: 04:08:41 on Nov 04,2025, Elapsed time: 0:00:00
+#    Time: 115 ns  Iteration: 1  Instance: /test_bench
+# End time: 08:49:44 on Nov 04,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
