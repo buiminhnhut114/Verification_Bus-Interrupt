@@ -1,5 +1,5 @@
-`ifndef RUN_TEST_INTR_ERRORS_V
-`define RUN_TEST_INTR_ERRORS_V
+`ifndef RUN_INTR_ERRORS_V
+`define RUN_INTR_ERRORS_V
 
 localparam [11:2] OFF_UARTIMSC  = 10'h00E;
 localparam [11:2] OFF_UARTRIS   = 10'h00F;
@@ -13,9 +13,6 @@ begin
   $display("\n[TC] Error interrupts — FE/PE/BE/OE");
   apb_write(OFF_UARTIMSC, M_ERR);
 
-`ifndef USE_RTL
-  tb_make_error("FE"); tb_make_error("PE"); tb_make_error("BE"); tb_make_error("OE");
-`endif
 
   apb_read(OFF_UARTRIS, ris);
   CHECK_EQ("FERIS", ris & M_FE, M_FE);

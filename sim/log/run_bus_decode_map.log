@@ -1,8 +1,9 @@
 # vsim -debugDB -l run_bus_decode_map.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
-# Start time: 04:08:33 on Nov 04,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 10:33:04 on Nov 04,2025
+# ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# ** Note: (vopt-4301) Memory core inferred for signal 'rx_mem' width=8, depth=16, type=RAM at location ../rtl/Uart.v:93
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2024.3 linux_x86_64 Sep 10 2024
@@ -49,5 +50,5 @@
 #    Time: 715 ns  Scope: test_bench File: ../tb/test_bench.v Line: 171
 # ** Note: $finish    : ../tb/test_bench.v(171)
 #    Time: 715 ns  Iteration: 1  Instance: /test_bench
-# End time: 04:08:33 on Nov 04,2025, Elapsed time: 0:00:00
+# End time: 10:33:05 on Nov 04,2025, Elapsed time: 0:00:01
 # Errors: 1, Warnings: 1

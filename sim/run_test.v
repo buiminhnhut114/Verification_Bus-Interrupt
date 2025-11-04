@@ -1,26 +1,27 @@
-`ifndef RUN_BUS_ACCESS_READ_V
-`define RUN_BUS_ACCESS_READ_V
+`ifndef RUN_INTR_ERRORS_V
+`define RUN_INTR_ERRORS_V
 
-localparam [11:2] OFF_UARTFR = 10'h006; // 0x018
-localparam [11:2] OFF_UARTCR = 10'h00C; // 0x030
+localparam [11:2] OFF_UARTIMSC  = 10'h00E;
+localparam [11:2] OFF_UARTRIS   = 10'h00F;
+localparam [11:2] OFF_UARTICR   = 10'h011;
+localparam [15:0] M_FE = 16'h0080, M_PE = 16'h0100, M_BE = 16'h0200, M_OE = 16'h0400;
+localparam [15:0] M_ERR = M_FE|M_PE|M_BE|M_OE;
 
 task run_test;
-  reg [15:0] r1, r2, r3;
+  reg [15:0] ris;
 begin
-  $display("\n================ [TC] BUS.AccessRead ==================");
+  $display("\n[TC] Error interrupts — FE/PE/BE/OE");
+  apb_write(OFF_UARTIMSC, M_ERR);
 
-  // 1) FR stable back-to-back
-  apb_read(OFF_UARTFR, r1);
-  apb_read(OFF_UARTFR, r2);
-  CHECK_EQ("FR stable r1==r2", r2, r1);
 
-  // 2) FR read sau khi write CR vẫn hợp lệ (không có golden strict → chỉ log PASS)
-  apb_write(OFF_UARTCR, 16'h0001);
-  apb_read (OFF_UARTFR, r3);
-  $display("[%0t] [INFO] FR after CR write = 0x%04h", $time, r3);
-  pass_cnt = pass_cnt + 1; // đếm PASS cho case read-after-write
+  apb_read(OFF_UARTRIS, ris);
+  CHECK_EQ("FERIS", ris & M_FE, M_FE);
+  CHECK_EQ("PERIS", ris & M_PE, M_PE);
+  CHECK_EQ("BERIS", ris & M_BE, M_BE);
+  CHECK_EQ("OERIS", ris & M_OE, M_OE);
 
-  $display("================ DONE BUS.AccessRead ==================\n");
+  apb_write(OFF_UARTICR, M_ERR);
+  apb_read(OFF_UARTRIS, ris); CHECK_EQ("All errors cleared", ris & M_ERR, 16'h0);
 end
 endtask
 `endif

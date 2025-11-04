@@ -1,5 +1,5 @@
 # vsim -debugDB -l run_bus_access_write.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
-# Start time: 04:08:19 on Nov 04,2025
+# Start time: 10:29:33 on Nov 04,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
@@ -44,5 +44,5 @@
 #    Time: 445 ns  Scope: test_bench File: ../tb/test_bench.v Line: 171
 # ** Note: $finish    : ../tb/test_bench.v(171)
 #    Time: 445 ns  Iteration: 1  Instance: /test_bench
-# End time: 04:08:20 on Nov 04,2025, Elapsed time: 0:00:01
+# End time: 10:29:33 on Nov 04,2025, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 1

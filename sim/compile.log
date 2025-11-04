@@ -1,8 +1,11 @@
 Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
-Start time: 08:49:43 on Nov 04,2025
+Start time: 10:35:01 on Nov 04,2025
 vlog -sv -f compile.f 
 -- Compiling module Uart
 -- Compiling module test_bench
-** Error: run_test.v(21): (vlog-2730) Undefined variable: 'pass_cnt'.
-End time: 08:49:43 on Nov 04,2025, Elapsed time: 0:00:00
-Errors: 1, Warnings: 0
+-- Compiling package run_test_v_unit
+
+Top level modules:
+	test_bench
+End time: 10:35:01 on Nov 04,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
