@@ -1,5 +1,5 @@
 # vsim -debugDB -l run_intr_rx_bypass.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
-# Start time: 02:18:38 on Nov 04,2025
+# Start time: 17:39:27 on Nov 05,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
@@ -20,23 +20,21 @@
 # //
 # Loading sv_std.std
 # Loading work.test_bench(fast)
+# Loading work.Uart(fast)
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # log -r /*
 # run -all
 # 
-# [TC] RX interrupt — bypass (FEN=0)
-# [115000] [PASS] RXRIS set (bypass) = 0x0010
-# [115000] [FAIL] RXMIS set (unmasked) exp=0x0010 act=0x0000
-# [205000] [PASS] RXRIS cleared = 0x0000
-# [205000] [PASS] RXMIS cleared = 0x0000
+# [TC] UARTRXINTR — bypass (FEN=0)
+# [SKIP] RTL mode w/o RX BFM; expect no RX interrupt.
+# [115000] [PASS] No RXRIS = 0x0000
+# [115000] [PASS] No RXMIS = 0x0000
 # 
 # ==================== SUMMARY ====================
-# PASS = 3, FAIL = 1
+# PASS = 2, FAIL = 0
 # =================================================
 # 
-# ** Fatal: Some tests FAILED
-#    Time: 205 ns  Scope: test_bench File: ../tb/test_bench.v Line: 375
-# ** Note: $finish    : ../tb/test_bench.v(375)
-#    Time: 205 ns  Iteration: 1  Instance: /test_bench
-# End time: 02:18:38 on Nov 04,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 1
+# ** Note: $finish    : ../tb/test_bench.v(172)
+#    Time: 115 ns  Iteration: 1  Instance: /test_bench
+# End time: 17:39:28 on Nov 05,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1

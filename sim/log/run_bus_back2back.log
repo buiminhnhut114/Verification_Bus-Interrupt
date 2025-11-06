@@ -1,5 +1,5 @@
 # vsim -debugDB -l run_bus_back2back.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
-# Start time: 00:48:00 on Nov 04,2025
+# Start time: 17:20:36 on Nov 05,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
@@ -20,19 +20,25 @@
 # //
 # Loading sv_std.std
 # Loading work.test_bench(fast)
+# Loading work.Uart(fast)
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # log -r /*
 # run -all
 # 
-# [TC] BUS.Back-to-Back — Write/Read sequence without idle
-# FAIL: UARTCR readback after back2back = 0300 exp 0003
-# RESULT: FAILED (err=1)
+# ================ [TC] BUS.Back-to-Back ================
+# [55000] [INFO] FR during back2back = 0x0090
+# [115000] [FAIL] Back2Back CR rb exp=0x0003 act=0x0300
+# [205000] [PASS] CR rb after rapid toggles = 0x0000
+# ================ DONE BUS.Back-to-Back ================
+# 
 # 
 # ==================== SUMMARY ====================
-# PASS = 0, FAIL = 0
+# PASS = 1, FAIL = 1
 # =================================================
 # 
-# ** Note: $finish    : ../tb/test_bench.v(233)
-#    Time: 115 ns  Iteration: 1  Instance: /test_bench
-# End time: 00:48:01 on Nov 04,2025, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 1
+# ** Fatal: Some tests FAILED
+#    Time: 205 ns  Scope: test_bench File: ../tb/test_bench.v Line: 171
+# ** Note: $finish    : ../tb/test_bench.v(171)
+#    Time: 205 ns  Iteration: 1  Instance: /test_bench
+# End time: 17:20:36 on Nov 05,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1

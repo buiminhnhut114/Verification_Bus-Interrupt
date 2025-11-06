@@ -1,5 +1,5 @@
 # vsim -debugDB -l run_bus_access_write.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
-# Start time: 10:29:33 on Nov 04,2025
+# Start time: 17:23:53 on Nov 05,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
@@ -26,23 +26,22 @@
 # run -all
 # 
 # ================ [TC] BUS.AccessWrite =================
-# [55000] [FAIL] CR write 0000 rb exp=0x0000 act=0x0300
-# [115000] [FAIL] CR write 0001 rb exp=0x0001 act=0x0300
-# [175000] [PASS] CR write 0301 rb = 0x0301
-# [235000] [PASS] FR is RO (write ignored), FR read : 0x0090
-# [355000] [PASS] IBRD rb after LCR_H = 0x001b
-# [385000] [PASS] FBRD rb after LCR_H = 0x0003
-# [445000] [PASS] RIS after ICR no-pending = 0x0000
+# [115000] [PASS] RIS clean before test = 0x0000
+# [175000] [PASS] CR wr 0001 rb (ignore [9:8]) -> 0x0001
+# [235000] [PASS] CR wr 0000 rb (ignore [9:8]) -> 0x0000
+# [295000] [PASS] CR wr 0301 rb (ignore [9:8]) -> 0x0301
+# [355000] [PASS] FR is RO (write ignored), read FR : 0x0090
+# [475000] [PASS] IBRD rb after LCR_H = 0x001b
+# [505000] [PASS] FBRD rb after LCR_H = 0x0003
+# [565000] [PASS] RIS after ICR (no pending) = 0x0000
 # ================ DONE BUS.AccessWrite ================
 # 
 # 
 # ==================== SUMMARY ====================
-# PASS = 5, FAIL = 2
+# PASS = 8, FAIL = 0
 # =================================================
 # 
-# ** Fatal: Some tests FAILED
-#    Time: 445 ns  Scope: test_bench File: ../tb/test_bench.v Line: 171
-# ** Note: $finish    : ../tb/test_bench.v(171)
-#    Time: 445 ns  Iteration: 1  Instance: /test_bench
-# End time: 10:29:33 on Nov 04,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 1
+# ** Note: $finish    : ../tb/test_bench.v(172)
+#    Time: 565 ns  Iteration: 1  Instance: /test_bench
+# End time: 17:23:53 on Nov 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1

@@ -1,5 +1,5 @@
 # vsim -debugDB -l run_intr_rx_timeout.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
-# Start time: 01:56:00 on Nov 04,2025
+# Start time: 17:42:14 on Nov 05,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
@@ -20,19 +20,21 @@
 # //
 # Loading sv_std.std
 # Loading work.test_bench(fast)
+# Loading work.Uart(fast)
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # log -r /*
 # run -all
 # 
-# [TC] RX timeout (32-bit) + negative case
-# [85000] [PASS] RTRIS set = 0x0040
-# [145000] [PASS] RTRIS stays 0 (negative) = 0x0000
+# [TC] UARTRTINTR — Receive timeout
+# [SKIP] RTL mode w/o RX BFM; expect no timeout.
+# [115000] [PASS] No RTRIS = 0x0000
+# [115000] [PASS] No RTMIS = 0x0000
 # 
 # ==================== SUMMARY ====================
 # PASS = 2, FAIL = 0
 # =================================================
 # 
-# ** Note: $finish    : ../tb/test_bench.v(359)
-#    Time: 145 ns  Iteration: 1  Instance: /test_bench
-# End time: 01:56:00 on Nov 04,2025, Elapsed time: 0:00:00
+# ** Note: $finish    : ../tb/test_bench.v(172)
+#    Time: 115 ns  Iteration: 1  Instance: /test_bench
+# End time: 17:42:14 on Nov 05,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1

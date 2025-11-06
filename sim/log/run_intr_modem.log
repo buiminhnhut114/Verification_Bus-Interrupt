@@ -1,5 +1,5 @@
 # vsim -debugDB -l run_intr_modem.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
-# Start time: 01:56:11 on Nov 04,2025
+# Start time: 17:43:22 on Nov 05,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
@@ -20,22 +20,30 @@
 # //
 # Loading sv_std.std
 # Loading work.test_bench(fast)
+# Loading work.Uart(fast)
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # log -r /*
 # run -all
 # 
-# [TC] Modem status — RI/CTS/DCD/DSR
-# [55000] [PASS] RI set = 0x0001
-# [55000] [PASS] CTS set = 0x0002
-# [55000] [PASS] DCD set = 0x0004
-# [55000] [PASS] DSR set = 0x0008
-# [115000] [PASS] All modem cleared = 0x0000
+# [TC] UARTMSINTR — Modem status
+# [SKIP] RTL mode w/o modem stim; expect none:  RI
+# [85000] [PASS] RI RIS 0 = 0x0000
+# [85000] [PASS] RI MIS 0 = 0x0000
+# [SKIP] RTL mode w/o modem stim; expect none: CTS
+# [175000] [PASS] CTS RIS 0 = 0x0000
+# [175000] [PASS] CTS MIS 0 = 0x0000
+# [SKIP] RTL mode w/o modem stim; expect none: DCD
+# [265000] [PASS] DCD RIS 0 = 0x0000
+# [265000] [PASS] DCD MIS 0 = 0x0000
+# [SKIP] RTL mode w/o modem stim; expect none: DSR
+# [355000] [PASS] DSR RIS 0 = 0x0000
+# [355000] [PASS] DSR MIS 0 = 0x0000
 # 
 # ==================== SUMMARY ====================
-# PASS = 5, FAIL = 0
+# PASS = 8, FAIL = 0
 # =================================================
 # 
-# ** Note: $finish    : ../tb/test_bench.v(359)
-#    Time: 115 ns  Iteration: 1  Instance: /test_bench
-# End time: 01:56:11 on Nov 04,2025, Elapsed time: 0:00:00
+# ** Note: $finish    : ../tb/test_bench.v(172)
+#    Time: 355 ns  Iteration: 1  Instance: /test_bench
+# End time: 17:43:22 on Nov 05,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1

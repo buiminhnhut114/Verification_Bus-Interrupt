@@ -81,6 +81,52 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 !s11f vlog 2024.3 2024.09, Sep 10 2024
 13
 !s112 1.1
@@ -90,60 +136,60 @@ R1
 cModel Technology
 d/ictc/seminar_data/sem_185/TASK1/sim
 T_opt2
-!s110 1762227306
-V@jB6J7EeN6a6BPnFGaP]l3
+Z2 !s110 1762339430
+Vo_3gAeahQ9a3cOAmG6XX?3
 04 10 4 work test_bench fast 0
-=1-000ae431a4f1-6909746a-45fd0-25f2
+=1-000ae431a4f1-690b2a66-8a44a-2b3a
 R1
 !s12f OEM100
 !s12b OEM100
 !s124 OEM10U2 
 !s135 nogc
 o-quiet -auto_acc_if_foreign -work work -debugdb +access
-Z2 tCvgOpt 0
+Z3 tCvgOpt 0
 n@_opt2
 OL;O;2024.3;79
 Xrun_test_v_unit
-Z3 2../rtl/Uart.v|../tb/test_bench.v|run_test.v
-Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z5 !s110 1762227301
-Vooz9F0]KBo2D`<=<9e^173
+Z4 2../rtl/Uart.v|../tb/test_bench.v|run_test.v
+Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R2
+VIL1G^7U_F<ZR5IDomG>La0
 r1
 !s85 0
 !i10b 1
-!s100 N@1aXS@RQcB464UFjNa:S1
-Iooz9F0]KBo2D`<=<9e^173
+!s100 c<PY<FcJJFgzU3NzROG`S0
+IIL1G^7U_F<ZR5IDomG>La0
 !i103 1
 S1
 Z6 d/home/minhnhut/TASK1/sim
-Z7 w1762227301
+Z7 w1762339429
 8run_test.v
 Z8 Frun_test.v
-!i122 64
-L0 4 0
+!i122 99
+L0 3 0
 Z9 OL;L;2024.3;79
 31
-Z10 !s108 1762227301.000000
+Z10 !s108 1762339430.000000
 Z11 !s107 run_test.v|../tb/test_bench.v|../rtl/Uart.v|
 Z12 !s90 -sv|-f|compile.f|
 !i113 0
 Z13 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
-vtest_bench
 R3
+vtest_bench
 R4
 R5
+R2
 !i10b 1
-!s100 gI:;R<Ja1>0d1l660>EKK1
-IV?`k2j:ShD9_4`C?CJ7PI1
+!s100 9bJ9;=PXRnkB5@NM04`?92
+Il8k9z=bkIiGR>GohS_ncW3
 S1
 R6
 R7
 8../tb/test_bench.v
 F../tb/test_bench.v
 R8
-!i122 64
-L0 4 202
+!i122 99
+L0 4 217
 Z14 VDg1SIo80bB@j0V0VzS_@n1
 R9
 r1
@@ -154,20 +200,20 @@ R11
 R12
 !i113 0
 R13
-R2
-vUart
 R3
+vUart
 R4
 R5
+R2
 !i10b 1
 !s100 5YSJI9YB8nYC7Ved@dP;@2
 IGaj2OLB37E0_8IiAh1NIT0
 S1
 R6
-w1762200483
+w1762315541
 8../rtl/Uart.v
 F../rtl/Uart.v
-!i122 64
+!i122 99
 L0 4 400
 R14
 R9
@@ -179,5 +225,5 @@ R11
 R12
 !i113 0
 R13
-R2
+R3
 n@uart

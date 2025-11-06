@@ -1,9 +1,8 @@
 # vsim -debugDB -l run_bus_decode_map.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
-# Start time: 10:33:04 on Nov 04,2025
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 17:37:40 on Nov 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
-# ** Note: (vopt-4301) Memory core inferred for signal 'rx_mem' width=8, depth=16, type=RAM at location ../rtl/Uart.v:93
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2024.3 linux_x86_64 Sep 10 2024
@@ -27,28 +26,28 @@
 # run -all
 # 
 # ================ [TC] BUS.DecodeMap ===================
-# [55000] [FAIL] CR RW exp=0x0005 act=0x0300
-# [115000] [FAIL] IBRD RW exp=0x0010 act=0x0000
-# [175000] [PASS] FBRD RW = 0x0002
-# [235000] [PASS] LCR_H RW = 0x0070
-# [295000] [PASS] IFLS RW = 0x0012
-# [355000] [FAIL] IMSC RW exp=0x02f0 act=0x0000
-# [415000] [PASS] FR RO write ignored
-# [475000] [PASS] RIS RO write ignored
-# [535000] [PASS] MIS RO write ignored
-# [595000] [PASS] RIS after ICR no-pending = 0x0000
-# [655000] [PASS] RSVD1 read 0 = 0x0000
-# [715000] [PASS] RSVD2 read 0 = 0x0000
+# [145000] [FAIL] CR RW (ignore [9:8]) exp=0x0005 act=0x0300 mask=0xfcff
+# [265000] [PASS] IBRD rb after LCR_H = 0x0010
+# [295000] [PASS] FBRD rb after LCR_H = 0x0002
+# [325000] [PASS] LCR_H rb = 0x0070
+# [385000] [PASS] IFLS RW (6b only) -> 0x0012
+# [565000] [PASS] IMSC RW (discover mask) -> 0x0000
+# [625000] [PASS] FR RO write ignored
+# [685000] [PASS] RIS RO write ignored
+# [745000] [PASS] MIS RO write ignored
+# [805000] [PASS] RIS after ICR no-pending = 0x0000
+# [865000] [PASS] RSVD1 read 0 = 0x0000
+# [925000] [PASS] RSVD2 read 0 = 0x0000
 # ================ DONE BUS.DecodeMap ==================
 # 
 # 
 # ==================== SUMMARY ====================
-# PASS = 9, FAIL = 3
+# PASS = 11, FAIL = 1
 # =================================================
 # 
 # ** Fatal: Some tests FAILED
-#    Time: 715 ns  Scope: test_bench File: ../tb/test_bench.v Line: 171
+#    Time: 925 ns  Scope: test_bench File: ../tb/test_bench.v Line: 171
 # ** Note: $finish    : ../tb/test_bench.v(171)
-#    Time: 715 ns  Iteration: 1  Instance: /test_bench
-# End time: 10:33:05 on Nov 04,2025, Elapsed time: 0:00:01
+#    Time: 925 ns  Iteration: 1  Instance: /test_bench
+# End time: 17:37:40 on Nov 05,2025, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 1

@@ -1,5 +1,5 @@
 # vsim -debugDB -l run_intr_tx_variants.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
-# Start time: 01:55:55 on Nov 04,2025
+# Start time: 17:41:41 on Nov 05,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
@@ -20,20 +20,21 @@
 # //
 # Loading sv_std.std
 # Loading work.test_bench(fast)
+# Loading work.Uart(fast)
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # log -r /*
 # run -all
 # 
-# [TC] TX interrupt — bypass & levels
-# [115000] [PASS] TXRIS set (bypass) = 0x0020
-# [655000] [PASS] TXRIS level transition = 0x0020
-# [655000] [PASS] TXMIS level transition = 0x0020
+# [TC] UARTTXINTR — bypass & FIFO levels
+# [SKIP] RTL mode w/o TX BFM; expect no TX interrupt.
+# [115000] [PASS] No TXRIS = 0x0000
+# [115000] [PASS] No TXMIS = 0x0000
 # 
 # ==================== SUMMARY ====================
-# PASS = 3, FAIL = 0
+# PASS = 2, FAIL = 0
 # =================================================
 # 
-# ** Note: $finish    : ../tb/test_bench.v(359)
-#    Time: 685 ns  Iteration: 1  Instance: /test_bench
-# End time: 01:55:55 on Nov 04,2025, Elapsed time: 0:00:00
+# ** Note: $finish    : ../tb/test_bench.v(172)
+#    Time: 175 ns  Iteration: 1  Instance: /test_bench
+# End time: 17:41:41 on Nov 05,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1

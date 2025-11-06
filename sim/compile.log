@@ -1,5 +1,5 @@
 Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
-Start time: 10:35:01 on Nov 04,2025
+Start time: 17:43:50 on Nov 05,2025
 vlog -sv -f compile.f 
 -- Compiling module Uart
 -- Compiling module test_bench
@@ -7,5 +7,5 @@ vlog -sv -f compile.f
 
 Top level modules:
 	test_bench
-End time: 10:35:01 on Nov 04,2025, Elapsed time: 0:00:00
+End time: 17:43:50 on Nov 05,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0

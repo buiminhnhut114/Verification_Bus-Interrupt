@@ -1,5 +1,5 @@
 # vsim -debugDB -l run_intr_combined.log -voptargs="+access" -assertdebug -c test_bench -do "log -r /*;run -all;" 
-# Start time: 01:56:17 on Nov 04,2025
+# Start time: 17:43:50 on Nov 05,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
@@ -20,20 +20,20 @@
 # //
 # Loading sv_std.std
 # Loading work.test_bench(fast)
+# Loading work.Uart(fast)
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # log -r /*
 # run -all
 # 
-# [TC] Combined UARTINTR (OR of MIS)
-# [55000] [FAIL] Combined MIS is 0
+# [TC] UARTINTR — Combined OR (via MIS) check
+# [SKIP] RTL mode w/o stim; expect MIS=0.
+# [85000] [PASS] MIS=0 = 0x0000
 # 
 # ==================== SUMMARY ====================
-# PASS = 0, FAIL = 1
+# PASS = 1, FAIL = 0
 # =================================================
 # 
-# ** Fatal: Some tests FAILED
-#    Time: 85 ns  Scope: test_bench File: ../tb/test_bench.v Line: 358
-# ** Note: $finish    : ../tb/test_bench.v(358)
+# ** Note: $finish    : ../tb/test_bench.v(172)
 #    Time: 85 ns  Iteration: 1  Instance: /test_bench
-# End time: 01:56:18 on Nov 04,2025, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 1
+# End time: 17:43:50 on Nov 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
